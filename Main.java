@@ -1,25 +1,33 @@
 import java.util.Scanner;
-public class Prime {
-public static void main(String[] args)
+public class Prime
 {
-Scanner sc = new Scanner(System.in);
-int a, b, i, j, flag;
-a = 2
-System.out.printf("\nEnter Range: ");
-b = sc.nextInt();
-System.out.printf("\nPrime numbers between %d and %d are: ", a, b);
-for (i = a; i <= b; i++) {
-if (i == 1 || i == 0)
-continue;
-flag = 1;
-for (j = 2; j <= i / 2; ++j) {
-if (i % j == 0) {
-flag = 0;
-break;
-}
-}
-if (flag == 1)
-System.out.println(i);
-}
-}
+    public static void main(String args[])
+    {
+         int s1, s2, s3, flag = 0, i, j;
+         Scanner s = new Scanner(System.in);
+         System.out.println ("Enter the lower limit :"); 
+         s1 = s.nextInt();
+         System.out.println ("Enter the upper limit :"); 
+         s2 = s.nextInt();
+         System.out.println ("The prime numbers in between the entered limits are :");
+         for(i = s1; i <= s2; i++)
+         {
+             for( j = 2; j < i; j++)
+             {
+                 if(i % j == 0)
+                 {
+                     flag = 0;
+                     break;
+                 }
+                 else
+                 {
+                     flag = 1;
+                 }
+             }
+             if(flag == 1)
+             {
+                 System.out.println(i);
+             }
+         }
+    }
 }
